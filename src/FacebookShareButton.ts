@@ -5,7 +5,7 @@ import createShareButton from './hocs/createShareButton';
 function facebookLink(url: string, { hashtag }: { hashtag?: string }) {
   assert(url, 'facebook.url');
 
-  return 'https://www.facebook.com/sharer/sharer.php' + objectToGetParams({ u: url, hashtag });
+  return 'https://www.facebook.com/dialog/share' + objectToGetParams({ href: url, hashtag, display: "popup" });
 }
 
 const FacebookShareButton = createShareButton<{ hashtag?: string }>(
